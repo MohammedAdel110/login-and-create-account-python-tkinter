@@ -23,7 +23,7 @@ userpage.geometry(f'{Width}x{Hight}+{centerWidth}+{centerHight}')
 
 #Left Frame
 
-sidebar = tk.Frame(userpage, width=400, bg='#ade8f4',relief=RAISED,highlightbackground="blue", highlightcolor="black")
+sidebar = Frame(userpage, width=400, bg='#ade8f4',relief=RAISED,highlightbackground="blue", highlightcolor="black")
 sidebar.pack(side="left", fill="y")
 #User Image
 userimage_path=Image.open('C:/Users/121mo/OneDrive/Desktop/hospital/full project/iamge/user.png')
@@ -69,8 +69,12 @@ book_lbl.place(relx=0.23,rely=0.15)
 #book lbl text
 bookText=Label(userpage,text="Book an appointment with the doctor?",font=('Arial',18,'bold'),fg="#0077b6")
 bookText.place(relx=0.23,rely=0.12)
+#book btn func
+def book_now():
+    userpage.destroy()
+    import Doctors_Appointment_Booking
 #book btn
-book_btn=Button(userpage,text='Book now',font=('Arial',13,'bold'),width=39,bg='#48cae4',fg='white')
+book_btn=Button(userpage,text='Book now',font=('Arial',13,'bold'),width=39,bg='#48cae4',fg='white',command=book_now)
 book_btn.place(relx=0.23,rely=0.63)
 #Buy medicine
 medicineImage_path=Image.open('C:/Users/121mo/OneDrive/Desktop/hospital/full project/iamge/medicin.jpg')
@@ -81,13 +85,13 @@ medicinlbl.place(relx=0.6,rely=0.15)
 #medicin text lbl
 medicinTextlbl=Label(userpage,text='Buy medicine',font=('Arial',18,'bold'),fg="#0077b6")
 medicinTextlbl.place(relx=0.6,rely=0.119)
+#medic go func
+def go_medic():
+    userpage.destroy()
+    import Buy_medic
 #medicin btn
-medicin_btn=Button(userpage,text='Buy now',font=('Arial',13,'bold'),width=39,bg='#48cae4',fg='white')
+medicin_btn=Button(userpage,text='Buy now',font=('Arial',13,'bold'),width=39,bg='#48cae4',fg='white',command=go_medic)
 medicin_btn.place(relx=0.6,rely=0.63)
-
-
-
-
 
 
 
